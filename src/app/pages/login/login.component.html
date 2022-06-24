@@ -1,0 +1,55 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row " >
+            
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <div class="container text-center">
+                    <img style="width:80px; padding-bottom:20px" src="../../../assets/logo.jpg" alt=""/>
+                <h1 class="text-center">Login</h1>
+                <!--{{loginData|json}}-->
+                <form (ngSubmit)="userLogin()">
+                    <!--username field-->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input 
+                    [(ngModel)]="log.username"
+                    name="username"
+                    required
+                    matInput placeholder="Enter username">
+                    <mat-hint>Valid Username</mat-hint>
+                  </mat-form-field>
+<br>
+                       <!--password field-->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input 
+                    [(ngModel)]="log.password"
+                    name="password"
+                    required
+                    type="password" matInput placeholder="Enter password">
+                    <mat-hint>Valid password</mat-hint>
+                  </mat-form-field>
+                
+                <br>
+                    <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Select role</mat-label>
+                    <mat-select>
+                    <mat-option value="admin">Admin</mat-option>
+                    <mat-option value="user">User</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+
+                      <!--submit botton-->
+                    <div class="container text-center">
+                    <button type="submit" *ngIf="isloggedin != 'true'" mat-raised-button (click)="userLogin()" mat-raised-button color="primary">Login</button>
+                    <button type="reset" class= "ml20" mat-raised-button color="accent">Reset</button>
+                </div>
+            
+                </form>
+            </div>
+        </mat-card>
+            </div>        
+        </div>
+    </div>
+</div>

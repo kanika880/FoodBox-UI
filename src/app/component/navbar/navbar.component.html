@@ -1,0 +1,43 @@
+<div class="toolbar" role="banner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="#"><img src="../../../assets/logo.jpg" alt="" width="70px" height="70px"></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav  d-flex justify-content-between">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="products" *ngIf="isAdmin != 'true'">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cart" *ngIf="isloggedin == 'true'">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="orders" *ngIf="isloggedin == 'true'" >Orders </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="products" *ngIf="isAdmin == 'true'">Manage Items</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="navbar-nav  d-flex justify-content-between">
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/login" *ngIf="isloggedin != 'true'">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup"  *ngIf="isloggedin != 'true'">Sign-up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/logout"  *ngIf="isloggedin == 'true'" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+    
+
+
+  
+  
+  
